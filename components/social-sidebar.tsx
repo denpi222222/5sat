@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Twitter } from 'lucide-react';
+import { Twitter, X } from 'lucide-react';
 import { useMobile } from '@/hooks/use-mobile';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -10,28 +10,85 @@ import { useTranslation } from 'react-i18next';
 // Update the SocialSidebar component by adding links to Telegram and Discord
 export const SocialSidebar = React.memo(function SocialSidebar() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isManuallyClosed, setIsManuallyClosed] = useState(false);
   const { isMobile } = useMobile();
   const { t } = useTranslation();
 
-  // Track page scrolling - DESKTOP ONLY
+  // Track page scrolling - MOBILE WITH AUTO-HIDE
   useEffect(() => {
-    // Desktop: show immediately and stay visible
-    setIsVisible(true);
-  }, []);
+    let hideTimer: NodeJS.Timeout;
+    let showTimer: NodeJS.Timeout;
 
-  // Show only on desktop devices (not on mobile)
-  if (isMobile) return null;
+    const showIcons = () => {
+      if (isManuallyClosed) return; // Don't show if manually closed
+      
+      setIsVisible(true);
+      
+      // Auto-hide on mobile after 1 hour
+      if (isMobile) {
+        hideTimer = setTimeout(() => {
+          setIsVisible(false);
+        }, 60 * 60 * 1000); // 1 hour
+      }
+    };
+
+    if (isMobile) {
+      // Mobile: show after 5 seconds, then auto-hide after 1 hour
+      showTimer = setTimeout(() => {
+        showIcons();
+      }, 5000); // 5 seconds delay
+    } else {
+      // Desktop: show immediately and stay visible
+      setIsVisible(true);
+    }
+
+    // Clean up timers when component unmounts
+    return () => {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+      }
+      if (showTimer) {
+        clearTimeout(showTimer);
+      }
+    };
+  }, [isMobile, isManuallyClosed]);
+
+
 
   // Define styles based on device - SOCIAL ICONS ON TOP FOR MOBILE
-  const sidebarClass = 'fixed top-1/2 -translate-y-1/2 left-0 z-50 flex-col';
+  const sidebarClass = isMobile
+    ? 'fixed top-16 left-0 right-0 z-50 flex-row justify-center'
+    : 'fixed top-1/2 -translate-y-1/2 left-0 z-50 flex-col';
 
   return (
     <motion.div
-      initial={{ x: -100 }}
-      animate={isVisible ? { x: 0 } : { x: -100 }}
+      initial={isMobile ? { y: -100 } : { x: -100 }}
+      animate={
+        isVisible
+          ? isMobile
+            ? { y: 0 }
+            : { x: 0 }
+          : isMobile
+            ? { y: -100 }
+            : { x: -100 }
+      }
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      className={`${sidebarClass} flex items-center gap-1 bg-gradient-to-r from-slate-900/90 to-blue-900/90 backdrop-blur-md border border-cyan-500/20 shadow-lg shadow-cyan-500/10 max-w-[300px] p-1 rounded-full`}
+      className={`${sidebarClass} flex items-center gap-1 bg-gradient-to-r from-slate-900/90 to-blue-900/90 backdrop-blur-md border border-cyan-500/20 shadow-lg shadow-cyan-500/10 ${
+        isMobile ? 'mx-auto max-w-[140px] p-2 rounded-lg relative' : 'max-w-[300px] p-1 rounded-full'
+      }`}
     >
+      {/* Close button for mobile */}
+      {isMobile && isVisible && (
+        <button
+          onClick={() => {
+            setIsVisible(false);
+            setIsManuallyClosed(true);
+          }}
+          className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 hover:bg-red-600 rounded-full flex items-center justify-center border border-red-300 shadow-lg"
+        >
+          <X className="w-3 h-3 text-white" />
+        </button>
+      )}
 
       {/* Twitter/X */}
       <a
@@ -43,9 +100,11 @@ export const SocialSidebar = React.memo(function SocialSidebar() {
         <motion.div
           whileHover={{ scale: 1.2, rotate: 5 }}
           whileTap={{ scale: 0.9 }}
-          className='bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-full border border-cyan-500/30 shadow-md shadow-cyan-500/10 p-4'
+          className={`bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-full border border-cyan-500/30 shadow-md shadow-cyan-500/10 ${
+            isMobile ? 'p-2' : 'p-4'
+          }`}
         >
-          <Twitter className='text-cyan-300 w-8 h-8' />
+          <Twitter className={`text-cyan-300 ${isMobile ? 'w-4 h-4' : 'w-8 h-8'}`} />
         </motion.div>
         <span className='absolute left-full ml-2 top-1/2 -translate-y-1/2 text-cyan-300 text-sm font-medium bg-slate-900/90 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap hidden md:block'>
           Twitter/X
@@ -62,12 +121,14 @@ export const SocialSidebar = React.memo(function SocialSidebar() {
         <motion.div
           whileHover={{ scale: 1.2, rotate: -5 }}
           whileTap={{ scale: 0.9 }}
-          className='bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-full border border-blue-500/30 shadow-md shadow-blue-500/10 p-4'
+          className={`bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-full border border-blue-500/30 shadow-md shadow-blue-500/10 ${
+            isMobile ? 'p-2' : 'p-4'
+          }`}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='32'
-            height='32'
+            width={isMobile ? '16' : '32'}
+            height={isMobile ? '16' : '32'}
             viewBox='0 0 24 24'
             fill='none'
             stroke='currentColor'
@@ -96,12 +157,14 @@ export const SocialSidebar = React.memo(function SocialSidebar() {
         <motion.div
           whileHover={{ scale: 1.2, rotate: -5 }}
           whileTap={{ scale: 0.9 }}
-          className='bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-full border border-indigo-500/30 shadow-md shadow-indigo-500/10 p-4'
+          className={`bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-full border border-indigo-500/30 shadow-md shadow-indigo-500/10 ${
+            isMobile ? 'p-2' : 'p-4'
+          }`}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='32'
-            height='32'
+            width={isMobile ? '16' : '32'}
+            height={isMobile ? '16' : '32'}
             viewBox='0 0 24 24'
             fill='none'
             stroke='currentColor'
