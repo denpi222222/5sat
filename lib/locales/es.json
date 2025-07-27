@@ -837,5 +837,56 @@
         "split48h": "80% / 10% / 10%"
       }
     }
+  },
+  "swap": {
+    "buyCRAA": "Comprar CRAA en Camelot",
+    "instructions": {
+      "title": "Instrucciones para comprar CRAA:",
+      "step1": "Haz clic en el botón '🟡 Comprar CRAA en Camelot' abajo",
+      "step2": "Cambia automáticamente a la red ApeChain",
+      "step3": "Configura el slippage: compra 3-5%, venta 10-15%",
+      "step4": "Confirma la transacción en la wallet"
+    },
+    "fees": {
+      "title": "💰 Comisiones y Slippage:",
+      "buy": {
+        "title": "🟢 Comprar CRAA (APE → CRAA):",
+        "slippage": "3-5% (recomendado)",
+        "tax": "0% en la compra"
+      },
+      "sell": {
+        "title": "🔴 Vender CRAA (CRAA → APE):",
+        "slippage": "10-15% (recomendado)",
+        "tax": "10% (automático)",
+        "total": "Total en venta: 10-15% slippage + 10% impuesto"
+      },
+      "camelot": "Comisión Camelot:",
+      "free": "0% (gratis)",
+      "slippage": "Slippage:",
+      "token": {
+        "tax": "Impuesto del token:"
+      }
+    },
+    "slippage": {
+      "what": {
+        "title": "💡 ¿Qué es el slippage?",
+        "description": "El slippage es el cambio máximo de precio que estás dispuesto a aceptar. En alta volatilidad o baja liquidez, el precio puede cambiar entre el envío y la ejecución de la transacción."
+      }
+    },
+    "screenshot": {
+      "title": "📸 Ejemplo de configuración en Camelot:",
+      "alt": "Ejemplo de configuración de Camelot",
+      "fallback": "La captura de pantalla de la configuración de Camelot se añadirá a /public/images/1234.jpg"
+    },
+    "dexscreener": {
+      "button": "Ver precio de CRAA en DexScreener"
+    },
+    "camelot": {
+      "button": "Comprar CRAA en Camelot"
+    },
+    "security": "Compra segura a través de Camelot V2",
+    "recommended": {
+      "settings": "Configuración recomendada: compra 3-5% slippage, venta 10-15% slippage"
+    }
   }
 }

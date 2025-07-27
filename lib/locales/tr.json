@@ -888,5 +888,56 @@
         "split48h": "80% / 10% / 10%"
       }
     }
+  },
+  "swap": {
+    "buyCRAA": "Camelot'ta CRAA Satın Al",
+    "instructions": {
+      "title": "CRAA satın alma talimatları:",
+      "step1": "Aşağıdaki '🟡 Camelot'ta CRAA Satın Al' butonuna tıklayın",
+      "step2": "Otomatik olarak ApeChain ağına geçin",
+      "step3": "Slippage ayarla: alış 3-5%, satış 10-15%",
+      "step4": "Cüzdanda işlemi onaylayın"
+    },
+    "fees": {
+      "title": "💰 Komisyonlar ve Slippage:",
+      "buy": {
+        "title": "🟢 CRAA Satın Al (APE → CRAA):",
+        "slippage": "3-5% (önerilen)",
+        "tax": "Alışta %0 vergi"
+      },
+      "sell": {
+        "title": "🔴 CRAA Sat (CRAA → APE):",
+        "slippage": "10-15% (önerilen)",
+        "tax": "%10 (otomatik)",
+        "total": "Satışta toplam: 10-15% slippage + %10 vergi"
+      },
+      "camelot": "Camelot Komisyonu:",
+      "free": "%0 (ücretsiz)",
+      "slippage": "Slippage:",
+      "token": {
+        "tax": "Token Vergisi:"
+      }
+    },
+    "slippage": {
+      "what": {
+        "title": "💡 Slippage nedir?",
+        "description": "Slippage, kabul etmeye razı olduğunuz maksimum fiyat değişimidir. Yüksek volatilite veya düşük likiditede, işlem gönderimi ile gerçekleşmesi arasında fiyat değişebilir."
+      }
+    },
+    "screenshot": {
+      "title": "📸 Camelot ayar örneği:",
+      "alt": "Camelot ayar örneği",
+      "fallback": "Camelot ayar ekran görüntüsü /public/images/1234.jpg adresine eklenecek"
+    },
+    "dexscreener": {
+      "button": "DexScreener'da CRAA fiyatını görüntüle"
+    },
+    "camelot": {
+      "button": "Camelot'ta CRAA Satın Al"
+    },
+    "security": "Camelot V2 üzerinden güvenli satın alma",
+    "recommended": {
+      "settings": "Önerilen ayarlar: alış 3-5% slippage, satış 10-15% slippage"
+    }
   }
 }

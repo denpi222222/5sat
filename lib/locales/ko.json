@@ -872,5 +872,56 @@
         "split48h": "80% / 10% / 10%"
       }
     }
+  },
+  "swap": {
+    "buyCRAA": "Camelot에서 CRAA 구매",
+    "instructions": {
+      "title": "CRAA 구매 안내:",
+      "step1": "아래 '🟡 Camelot에서 CRAA 구매' 버튼을 클릭하세요",
+      "step2": "자동으로 ApeChain 네트워크로 전환됩니다",
+      "step3": "슬리피지 설정: 구매 3-5%, 판매 10-15%",
+      "step4": "지갑에서 거래를 확인하세요"
+    },
+    "fees": {
+      "title": "💰 수수료 및 슬리피지:",
+      "buy": {
+        "title": "🟢 CRAA 구매 (APE → CRAA):",
+        "slippage": "3-5% (권장)",
+        "tax": "구매 시 0% 세금"
+      },
+      "sell": {
+        "title": "🔴 CRAA 판매 (CRAA → APE):",
+        "slippage": "10-15% (권장)",
+        "tax": "10% (자동)",
+        "total": "판매 시 총합: 10-15% 슬리피지 + 10% 세금"
+      },
+      "camelot": "Camelot 수수료:",
+      "free": "0% (무료)",
+      "slippage": "슬리피지:",
+      "token": {
+        "tax": "토큰 세금:"
+      }
+    },
+    "slippage": {
+      "what": {
+        "title": "💡 슬리피지란?",
+        "description": "슬리피지는 사용자가 허용할 수 있는 최대 가격 변동입니다. 변동성이 크거나 유동성이 낮을 때, 거래 전송과 실행 사이에 가격이 변할 수 있습니다."
+      }
+    },
+    "screenshot": {
+      "title": "📸 Camelot 설정 예시:",
+      "alt": "Camelot 설정 예시",
+      "fallback": "Camelot 설정 스크린샷이 /public/images/1234.jpg에 추가됩니다"
+    },
+    "dexscreener": {
+      "button": "DexScreener에서 CRAA 시세 보기"
+    },
+    "camelot": {
+      "button": "Camelot에서 CRAA 구매"
+    },
+    "security": "Camelot V2를 통한 안전한 구매",
+    "recommended": {
+      "settings": "권장 설정: 구매 3-5% 슬리피지, 판매 10-15% 슬리피지"
+    }
   }
 }

@@ -24,8 +24,8 @@ export function I18nLanguageSwitcher() {
     () => [
       { code: 'en', name: 'English', display: 'EN', flag: '🇺🇸' },
       { code: 'zh', name: '中文', flag: '🇨🇳' },
-      { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-      { code: 'uk', name: 'Українська', flag: '🇺🇦' },
+      { code: 'ru', name: 'Russian', flag: '🇷🇺' },
+      { code: 'uk', name: 'Ukrainian', flag: '🇺🇦' },
       { code: 'es', name: 'Español', flag: '🇪🇸' },
       { code: 'ko', name: '한국어', flag: '🇰🇷' },
       { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },

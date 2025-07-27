@@ -29,14 +29,14 @@ export function GlobalLanguageSwitcher() {
       if (Date.now() < hiddenUntilTime) {
         setHidden(true);
         setReady(true);
-        // Автоматически показать после истечения времени
+        // Automatically show after timeout
         const timeout = setTimeout(() => {
           setHidden(false);
           localStorage.removeItem('crazycube:langSwitcher:hiddenUntil');
         }, hiddenUntilTime - Date.now());
         return () => clearTimeout(timeout);
       } else {
-        // Время истекло, показываем
+        // Timeout expired, show
         localStorage.removeItem('crazycube:langSwitcher:hiddenUntil');
         setHidden(false);
         setReady(true);
@@ -58,7 +58,7 @@ export function GlobalLanguageSwitcher() {
           aria-label="Hide translator"
           className="absolute -top-2 -right-2 bg-black/70 border border-slate-800 rounded-full p-1"
           onClick={() => {
-            // Скрыть на 1 час
+            // Hide for 1 hour
             const hideUntil = Date.now() + 60 * 60 * 1000;
             localStorage.setItem('crazycube:langSwitcher:hiddenUntil', String(hideUntil));
             setHidden(true);
