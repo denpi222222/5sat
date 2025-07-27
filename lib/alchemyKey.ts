@@ -15,16 +15,14 @@ const keyStats = new Map<
 >();
 
 // Tier 1: Premium Alchemy endpoints (fastest, rate limited)
-// SECURITY: Use environment variables first, fallback to hardcoded keys
+// TEMPORARY: Use hardcoded keys until environment variables work
 const ALCHEMY_KEYS = [
-  process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_1,
-  process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_2,
-  process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_3,
-  process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_4,
-  process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_5,
-  process.env.NEXT_PUBLIC_ALCHEMY_API_KEY, // Fallback to single key
-  'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C', // Temporary hardcoded key for development
-].filter((key): key is string => typeof key === 'string' && key.length > 0);
+  'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C',
+  'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C',
+  'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C',
+  'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C',
+  'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C',
+];
 
 // Tier 2: Public RPC endpoints (slower but reliable)
 const PUBLIC_RPC_ENDPOINTS = [
