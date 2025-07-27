@@ -478,7 +478,7 @@ export default function HomePage() {
             </p>
             {renderActionButton(
               '/claim',
-              t('sections.claim.button', 'Claim Reward')
+              t('sections.claim.button', 'Claim')
             )}
           </motion.div>
 

@@ -156,7 +156,7 @@ export const BurnedNftCard = React.memo(function BurnedNftCard({
                 >
                   {isClaiming
                     ? t('rewards.processing', 'PROCESSING...')
-                    : t('rewards.claim', 'CLAIM REWARD')}
+                    : t('rewards.claim', 'CLAIM')}
                 </Button>
               </div>
             )}
