@@ -8,10 +8,11 @@ import { useAccount } from 'wagmi';
 import dynamic from 'next/dynamic';
 
 import { Button } from '@/components/ui/button';
-import { ClaimRewards } from '@/components/ClaimRewards';
+import { BurnedNftCard } from '@/components/BurnedNftCard';
 import { WalletConnectNoSSR as WalletConnect } from '@/components/web3/wallet-connect.no-ssr';
 import { useMobile } from '@/hooks/use-mobile';
 import { TabNavigation } from '@/components/tab-navigation';
+import { useBurnedNfts } from '@/hooks/useBurnedNfts';
 
 const CoinsAnimation = dynamic(
   () => import('@/components/coins-animation').then(m => m.CoinsAnimation),
@@ -25,6 +26,7 @@ export default function RewardsPage() {
 
   const { t } = useTranslation();
   const { isConnected } = useAccount();
+  const { burnedNfts, isLoading: isLoadingNfts, error: nftsError } = useBurnedNfts();
 
   const renderContent = () => {
     if (!isConnected) {
@@ -42,7 +44,44 @@ export default function RewardsPage() {
       );
     }
 
-    return <ClaimRewards />;
+    if (isLoadingNfts) {
+      return (
+        <div className='flex justify-center items-center py-12'>
+          <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-amber-400'></div>
+          <span className='ml-3 text-amber-300'>Loading rewards...</span>
+        </div>
+      );
+    }
+
+    if (nftsError) {
+      return (
+        <div className='text-center py-12'>
+          <div className='text-red-400 mb-2'>Error loading data</div>
+          <div className='text-slate-400'>{nftsError}</div>
+        </div>
+      );
+    }
+
+    if (!burnedNfts || burnedNfts.length === 0) {
+      return (
+        <div className='text-center py-12'>
+          <div className='text-amber-300 mb-2 text-lg font-semibold'>
+            No rewards available
+          </div>
+          <div className='text-slate-400 max-w-md mx-auto'>
+            The appearance of rewards can sometimes be delayed by 3-5 minutes due to blockchain delays or network congestion. Try burning some NFTs to earn rewards!
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        {burnedNfts.map((nft) => (
+          <BurnedNftCard key={nft.tokenId} nft={nft} />
+        ))}
+      </div>
+    );
   };
 
   return (
