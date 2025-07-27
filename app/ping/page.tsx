@@ -115,7 +115,7 @@ export default function PingPage() {
               {t('navigation.home', 'Home')}
             </Button>
           </Link>
-          <TabNavigation />
+          {!isMobile && <TabNavigation />}
           <WalletConnect />
         </header>
 

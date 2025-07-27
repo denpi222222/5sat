@@ -107,7 +107,7 @@ export default function BurnPage() {
               {t('navigation.home', 'Home')}
             </Button>
           </Link>
-          <TabNavigation />
+          {!isMobile && <TabNavigation />}
           <WalletConnect />
         </header>
 

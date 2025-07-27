@@ -140,7 +140,7 @@ export default function RewardsPage() {
             </Button>
           </Link>
 
-          <TabNavigation />
+          {!isMobile && <TabNavigation />}
 
           <WalletConnect />
         </header>

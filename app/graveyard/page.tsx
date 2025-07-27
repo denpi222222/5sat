@@ -131,7 +131,7 @@ export default function GraveyardPage() {
             </Button>
           </Link>
           <div className='flex-1 flex justify-center min-w-0'>
-            <TabNavigation />
+            {!isMobile && <TabNavigation />}
           </div>
           <div className='flex items-center flex-shrink-0' />
         </header>

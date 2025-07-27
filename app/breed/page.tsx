@@ -532,7 +532,7 @@ export default function BreedPage() {
               {tr('navigation.home', 'Home')}
             </Button>
           </Link>
-          <TabNavigation />
+          {!isMobile && <TabNavigation />}
           <WalletConnect />
         </header>
 
