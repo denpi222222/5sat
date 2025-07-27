@@ -325,12 +325,9 @@ export const ClaimRewards = () => {
         <h2 className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-2'>
           Claim Your Rewards
         </h2>
-        <p className='text-slate-400'>Collect rewards from your burned NFTs</p>
-        <div className='mt-4'>
-          <Button variant='secondary' onClick={refresh} disabled={refreshing}>
-            {refreshing ? 'Refreshing...' : 'Refresh'}
-          </Button>
-        </div>
+        <p className='text-slate-400'>
+          Claim your burn rewards from the graveyard
+        </p>
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>

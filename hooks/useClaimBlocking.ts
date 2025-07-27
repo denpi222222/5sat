@@ -22,6 +22,7 @@ export const useClaimBlocking = () => {
       const timeRemaining = blockData.blockedUntil - now;
       
       if (timeRemaining > 0) {
+        console.log('🔒 Claim section is blocked, time remaining:', Math.ceil(timeRemaining / 1000));
         return { isBlocked: true, timeLeft: Math.ceil(timeRemaining / 1000) };
       } else {
         // Block expired, remove it
@@ -48,8 +49,7 @@ export const useClaimBlocking = () => {
       localStorage.setItem(CLAIM_BLOCK_KEY, JSON.stringify(blockData));
       setIsBlocked(true);
       setTimeLeft(240); // 4 minutes in seconds
-      
-      console.log('🔒 Claim section blocked for 4 minutes');
+      console.log('🔒 Claim section blocked for 4 minutes, localStorage set');
     } catch (error) {
       console.error('Error blocking claim section:', error);
     }

@@ -271,8 +271,10 @@ export const useBurnedNfts = () => {
                    if (result && 'needsSplit' in result) {
                      const split = splitCache.get(result.waitPeriod);
                      if (split && result.tokenId) {
-                       const record = (mcResults[index].result as any);
-                       if (record && record[1]) {
+                       const mcResult = mcResults[index];
+                       if (mcResult && mcResult.result) {
+                         const record = (mcResult.result as any);
+                         if (record && record[1]) {
                          const playerShare = (record[1] * BigInt(split.playerBps)) / 10000n;
                        
                          const finalResult: BurnedNftInfo = {
@@ -293,6 +295,7 @@ export const useBurnedNfts = () => {
                          nftsInfo.push(finalResult);
                        }
                      }
+                   }
                    } else if (result && !('needsSplit' in result) && result.tokenId) {
                      nftsInfo.push(result as BurnedNftInfo);
                    }
@@ -528,6 +531,7 @@ export const useClaimReward = (tokenId: string, onSuccess?: () => void) => {
       });
       
       // Block the entire claim section for 4 minutes after successful transaction
+      console.log('🎯 Blocking claim section after successful transaction');
       blockClaimSection();
       
       // Clear cache immediately after successful claim
@@ -551,7 +555,7 @@ export const useClaimReward = (tokenId: string, onSuccess?: () => void) => {
       });
       // Don't block NFT if transaction fails
     }
-  }, [isTxLoading, isTxSuccess, txError, tokenId, onSuccess, address, txHash]);
+  }, [isTxLoading, isTxSuccess, txError, tokenId, onSuccess, address, txHash, blockClaimSection]);
 
   return {
     claim,
