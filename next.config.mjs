@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const nextConfig = {
-  // Vercel configuration (removed static export for API routes)
+  // Netlify configuration with API routes support
   trailingSlash: true,
   
   // Disable ESLint during build to avoid linting errors

@@ -56,7 +56,8 @@ export const getAlchemyKey = (): string => {
     if (currentTier === 0) {
       currentTier = 1;
     }
-    return PUBLIC_RPC_ENDPOINTS[0] || 'https://rpc.apechain.com';
+    // Return a fallback key instead of full URL
+    return 'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C';
   }
 
   // Round-robin through available keys
