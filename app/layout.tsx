@@ -5,7 +5,6 @@ import '../styles/globals.css';
 import '../styles/mobile-fixes.css';
 import { Inter } from 'next/font/google';
 import { MobileNavigation } from '@/components/mobile-navigation';
-import { useMobile } from '@/hooks/use-mobile';
 import ViewportFix from '@/components/ViewportFix';
 
 const inter = Inter({
@@ -23,21 +22,11 @@ export const metadata = {
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/icons/favicon-16x16.png', sizes: '16x16' },
       { url: '/icons/favicon-32x32.png', sizes: '32x32' },
+      { url: '/icons/favicon-180x180.png', sizes: '180x180' },
+      { url: '/icons/favicon-192x192.png', sizes: '192x192' },
     ],
     apple: [
       { url: '/icons/favicon-180x180.png', sizes: '180x180' },
-      { url: '/icons/favicon-152x152.png', sizes: '152x152' },
-      { url: '/icons/favicon-120x120.png', sizes: '120x120' },
-      { url: '/icons/favicon-114x114.png', sizes: '114x114' },
-      { url: '/icons/favicon-76x76.png', sizes: '76x76' },
-      { url: '/icons/favicon-60x60.png', sizes: '60x60' },
-      { url: '/icons/favicon-57x57.png', sizes: '57x57' },
-    ],
-    other: [
-      {
-        rel: 'apple-touch-icon-precomposed',
-        url: '/icons/favicon-152x152.png',
-      },
     ],
   },
   generator: 'v0.dev',
