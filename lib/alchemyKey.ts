@@ -15,13 +15,15 @@ const keyStats = new Map<
 >();
 
 // Tier 1: Premium Alchemy endpoints (fastest, rate limited)
-// Use environment variables from Netlify
+// Use environment variables from Netlify + fallback key
 const ALCHEMY_KEYS = [
   process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_1,
   process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_2,
   process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_3,
   process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_4,
   process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_5,
+  // Fallback key for development/production
+  'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C',
 ].filter((key): key is string => typeof key === 'string' && key.length > 0);
 
 // Tier 2: Public RPC endpoints (slower but reliable)
@@ -54,8 +56,8 @@ export const getAlchemyKey = (): string => {
     if (currentTier === 0) {
       currentTier = 1;
     }
-    // Return a fallback key for development only
-    return 'NTY_VpoftuNVbJzOT2dar_SMVKJkdx_C';
+    // Return first available public RPC endpoint
+    return PUBLIC_RPC_ENDPOINTS[0] || 'https://rpc.apechain.com';
   }
 
   // Round-robin through available keys

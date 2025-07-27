@@ -14,16 +14,12 @@ export const apeChain = defineChain({
       http: [
         'https://rpc.apechain.com',
         'https://apechain.calderachain.xyz',
-        'https://apechain-rpc.publicnode.com',
-        'https://apechain.drpc.org',
       ],
     },
     public: {
       http: [
         'https://rpc.apechain.com',
         'https://apechain.calderachain.xyz',
-        'https://apechain-rpc.publicnode.com',
-        'https://apechain.drpc.org',
       ],
     },
   },
