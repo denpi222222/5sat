@@ -32,8 +32,6 @@ if (typeof window !== 'undefined') {
     transport: fallback([
       http(apeChain.rpcUrls.default.http[0]),
       http(apeChain.rpcUrls.default.http[1]),
-      http(apeChain.rpcUrls.default.http[2]),
-      http(apeChain.rpcUrls.default.http[3]),
     ]),
   });
 
@@ -53,8 +51,6 @@ if (typeof window !== 'undefined') {
       [apeChain.id]: fallback([
         http(apeChain.rpcUrls.default.http[0]),
         http(apeChain.rpcUrls.default.http[1]),
-        http(apeChain.rpcUrls.default.http[2]),
-        http(apeChain.rpcUrls.default.http[3]),
       ]),
     },
     // Disable persistent storage to prevent auto-reconnect across sessions
