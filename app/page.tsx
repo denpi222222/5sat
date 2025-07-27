@@ -582,7 +582,7 @@ export default function HomePage() {
             <p className='body-text text-teal-200 mb-4 relative z-10 flex-1'>
               {t(
                 'sections.game.description',
-                'Интерактивная игра в стиле майнкрафта, с открытым сумасшедшим миром, с сумасшедшей, удивительной физикой и геймплеем! СКОРО!'
+                'Interactive Minecraft-style game with an open crazy world, with crazy, amazing physics and gameplay! COMING SOON!'
               )}
             </p>
 
@@ -647,7 +647,7 @@ export default function HomePage() {
             <p className='body-text text-cyan-200 mb-4 relative z-10 flex-1'>
               {t(
                 'sections.bridge.description',
-                'Переноси свои NFT между сетями быстро и безопасно! Мост для твоих кубов: расширяй свои возможности и участвуй в новых мирах.'
+                'Transfer your NFTs between networks quickly and safely! Bridge for your cubes: expand your possibilities and participate in new worlds.'
               )}
             </p>
             <div className='mt-auto'>

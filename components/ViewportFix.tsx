@@ -2,8 +2,8 @@
 import { useEffect } from 'react';
 
 /**
- * Заменяет inline <script dangerouslySetInnerHTML> в layout.tsx.
- * Безопасно, без nonce, под CSP 'script-src self'.
+ * Replaces inline <script dangerouslySetInnerHTML> in layout.tsx.
+ * Safely, without nonce, under CSP 'script-src self'.
  */
 export default function ViewportFix() {
   useEffect(() => {

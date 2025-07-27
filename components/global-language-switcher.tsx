@@ -30,7 +30,7 @@ export function GlobalLanguageSwitcher() {
       <I18nLanguageSwitcher />
     {isMobile && (
         <button
-          aria-label="Скрыть переводчик"
+          aria-label="Hide translator"
           className="absolute -top-2 -right-2 bg-black/70 border border-slate-800 rounded-full p-1"
           onClick={() => { localStorage.setItem('crazycube:langSwitcher:hidden','1'); setHidden(true); }}
         >

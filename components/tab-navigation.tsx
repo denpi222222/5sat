@@ -17,10 +17,10 @@ import {
 } from 'lucide-react';
 
 /**
- * Подкапотный фикс зависаний навигации:
- *  - убираем ручной флаг isNavigating/targetPath/setTimeout
- *  - используем React.useTransition()
- *  - сохраняем визуал 1в1
+ * Under-the-hood navigation hang fix:
+ *  - remove manual flag isNavigating/targetPath/setTimeout
+ *  - use React.useTransition()
+ *  - preserve visual 1:1
  */
 export const TabNavigation = React.memo(function TabNavigation() {
   const router = useRouter();

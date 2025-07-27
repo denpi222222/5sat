@@ -15,8 +15,8 @@ interface CoinsAnimationProps {
 }
 
 /**
- * Fixed layer that drops coin-blue.png сверху экрана.
- * Pure CSS/JS — каждый coin это <span> с рандомными left, delay, duration, opacity, size.
+ * Fixed layer that drops coin-blue.png from top of screen.
+ * Pure CSS/JS — each coin is a <span> with random left, delay, duration, opacity, size.
  */
 export function CoinsAnimation({
   density = 12,

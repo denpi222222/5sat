@@ -27,7 +27,7 @@ export default function SocialTopBanner() {
 
   return (
     <div className="fixed top-2 left-2 right-2 z-50 bg-black/80 backdrop-blur-md border border-slate-800 rounded-2xl px-3 py-2 flex items-center gap-3 shadow">
-      <span className="text-xs opacity-80 shrink-0">Соцсети:</span>
+                  <span className="text-xs opacity-80 shrink-0">Social:</span>
       <div className="flex items-center gap-3">
         <Link href="https://x.com/crazy__cube" target="_blank" className="hover:opacity-90" aria-label="X (Twitter)">
           <Twitter className="w-4 h-4" />
@@ -39,7 +39,7 @@ export default function SocialTopBanner() {
           <MessageCircle className="w-4 h-4" />
         </Link>
       </div>
-      <button onClick={close} className="ml-auto p-1 rounded hover:bg-white/10" aria-label="Закрыть">
+                <button onClick={close} className="ml-auto p-1 rounded hover:bg-white/10" aria-label="Close">
         <X className="w-4 h-4" />
       </button>
     </div>
