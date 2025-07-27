@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { usePendingBurnRewards } from '@/hooks/usePendingBurnRewards';
+import { usePendingBurnRewards, PendingReward } from '@/hooks/usePendingBurnRewards';
 import { useBurnRecord } from '@/hooks/useNFTGameData';
 import { useCrazyCubeGame } from '@/hooks/useCrazyCubeGame';
-import { useClaimReward } from '@/hooks/useBurnedNfts';
+import { useClaimReward, BurnedNftInfo } from '@/hooks/useBurnedNfts';
 import { useClaimBlocking } from '@/hooks/useClaimBlocking';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -23,6 +23,8 @@ interface ClaimableNFTCardProps {
   onClaim: (tokenId: string) => void;
   isLoading: boolean;
   index: number;
+  isClaimed: boolean;
+  claimMessage?: { type: 'success' | 'error', message: string } | undefined;
 }
 
 const ClaimableNFTCard = ({
@@ -30,6 +32,8 @@ const ClaimableNFTCard = ({
   onClaim,
   isLoading,
   index,
+  isClaimed,
+  claimMessage,
 }: ClaimableNFTCardProps) => {
   const { t } = useTranslation();
   const { burnRecord, isLoading: isLoadingBurnRecord } = useBurnRecord(tokenId);
@@ -192,28 +196,51 @@ const ClaimableNFTCard = ({
             </div>
           </div>
 
-          <Button
-            onClick={requireApeChain(() => onClaim(tokenId))}
-            disabled={!isApeChain || !burnRecord.canClaim || isLoading}
-            className={`w-full ${
-              burnRecord.canClaim
-                ? 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500'
-                : 'bg-slate-700 cursor-not-allowed'
-            }`}
-          >
-            {isLoading ? (
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                className='w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2'
-              />
-            ) : (
-              <Coins className='w-4 h-4 mr-2' />
-            )}
-            {burnRecord.canClaim
-              ? `Claim ${estimatedReward.toFixed(2)} CRAA`
-              : `Wait ${burnRecord.timeLeftFormatted}`}
-          </Button>
+          {claimMessage ? (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`w-full p-3 rounded-lg border ${
+                claimMessage.type === 'success'
+                  ? 'bg-green-500/10 border-green-500/30 text-green-300'
+                  : 'bg-red-500/10 border-red-500/30 text-red-300'
+              }`}
+            >
+              <div className='flex items-center gap-2'>
+                {claimMessage.type === 'success' ? (
+                  <CheckCircle className='w-4 h-4' />
+                ) : (
+                  <AlertCircle className='w-4 h-4' />
+                )}
+                <span className='text-sm'>{claimMessage.message}</span>
+              </div>
+            </motion.div>
+          ) : (
+            <Button
+              onClick={requireApeChain(() => onClaim(tokenId))}
+              disabled={!isApeChain || !burnRecord.canClaim || isLoading || isClaimed}
+              className={`w-full ${
+                burnRecord.canClaim && !isClaimed
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500'
+                  : 'bg-slate-700 cursor-not-allowed'
+              }`}
+            >
+              {isLoading ? (
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                  className='w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2'
+                />
+              ) : (
+                <Coins className='w-4 h-4 mr-2' />
+              )}
+              {isClaimed
+                ? 'Do not click again - NFT reward claimed'
+                : burnRecord.canClaim
+                ? `Claim ${estimatedReward.toFixed(2)} CRAA`
+                : `Wait ${burnRecord.timeLeftFormatted}`}
+            </Button>
+          )}
         </CardContent>
       </Card>
     </motion.div>
@@ -232,19 +259,52 @@ export const ClaimRewards = () => {
   const { t } = useTranslation();
   const { address } = useAccount();
   const { isBlocked, timeLeft } = useClaimBlocking();
+  
+  // State to track claimed NFTs and show messages
+  const [claimedNFTs, setClaimedNFTs] = useState<Set<string>>(new Set());
+  const [claimMessages, setClaimMessages] = useState<Map<string, { type: 'success' | 'error', message: string }>>(new Map());
 
   // Create claim hooks for each reward
   const claimHooks = rewards.map(reward => useClaimReward(reward.tokenId, refresh));
 
   const handleClaim = async (tokenId: string) => {
+    // Immediately block the button and show message
+    setClaimedNFTs(prev => new Set(prev).add(tokenId));
+    
     const claimHook = claimHooks.find((_, index) => rewards[index]?.tokenId === tokenId);
     
     if (claimHook) {
       try {
         await claimHook.claim();
+        
+        // Show success message
+        setClaimMessages(prev => new Map(prev).set(tokenId, {
+          type: 'success',
+          message: `NFT #${tokenId} reward claimed successfully! Updating contract data (2-5 minutes)...`
+        }));
+        
+        // Refresh data after successful claim
+        setTimeout(() => {
+          refresh();
+        }, 2000);
+        
       } catch (error: unknown) {
         const errorMessage =
           error instanceof Error ? error.message : 'Failed to claim rewards';
+        
+        // Show error message
+        setClaimMessages(prev => new Map(prev).set(tokenId, {
+          type: 'error',
+          message: `Transaction failed: ${errorMessage}`
+        }));
+        
+        // Unblock the button on error
+        setClaimedNFTs(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(tokenId);
+          return newSet;
+        });
+        
         toast({
           title: 'Claim Failed',
           description: errorMessage,
@@ -331,8 +391,11 @@ export const ClaimRewards = () => {
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-        {rewards.map((r: any, index: number) => {
+        {rewards.map((r: PendingReward, index: number) => {
           const claimHook = claimHooks[index];
+          const isClaimed = claimedNFTs.has(r.tokenId);
+          const claimMessage = claimMessages.get(r.tokenId);
+          
           return (
             <ClaimableNFTCard
               key={r.tokenId}
@@ -340,6 +403,8 @@ export const ClaimRewards = () => {
               onClaim={handleClaim}
               isLoading={claimHook?.isClaiming || false}
               index={index}
+              isClaimed={isClaimed}
+              claimMessage={claimMessage}
             />
           );
         })}
