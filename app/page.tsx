@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { TabNavigation } from '@/components/tab-navigation';
 import dynamic from 'next/dynamic';
 import { WalletConnectNoSSR as WalletConnect } from '@/components/web3/wallet-connect.no-ssr';
-import { SocialSidebar } from '@/components/social-sidebar';
+
 const UserNFTsPreview = dynamic(
   () => import('@/components/UserNFTsPreview').then(m => m.UserNFTsPreview),
   { ssr: false }
@@ -713,8 +713,7 @@ export default function HomePage() {
         </motion.p>
       </motion.footer>
 
-      {/* Social sidebar - ADDED COMPONENT */}
-      <SocialSidebar />
+
     </div>
   );
 }
