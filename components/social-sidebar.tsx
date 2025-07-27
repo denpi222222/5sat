@@ -53,6 +53,17 @@ export const SocialSidebar = React.memo(function SocialSidebar() {
     };
   }, [isMobile, isManuallyClosed]);
 
+  // Reset manual close flag after 1 hour
+  useEffect(() => {
+    if (isManuallyClosed && isMobile) {
+      const resetTimer = setTimeout(() => {
+        setIsManuallyClosed(false);
+      }, 60 * 60 * 1000); // 1 hour
+
+      return () => clearTimeout(resetTimer);
+    }
+  }, [isManuallyClosed, isMobile]);
+
 
 
   // Define styles based on device - SOCIAL ICONS ON TOP FOR MOBILE
