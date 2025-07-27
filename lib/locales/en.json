@@ -18,6 +18,13 @@
     "goToCollection": "Go to Collection",
     "retry": "Retry"
   },
+  "social": {
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "twitter": "Twitter/X",
+    "hideFor1Hour": "Hide for 1 hour",
+    "menuHidden": "Social menu hidden for 1 hour"
+  },
   "graveyard": {
     "loading": "Loading your NFTs from the graveyard...",
     "empty": {

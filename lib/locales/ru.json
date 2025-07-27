@@ -18,6 +18,13 @@
     "goToCollection": "Перейти к коллекции",
     "retry": "Повторить"
   },
+  "social": {
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "twitter": "Twitter/X",
+    "hideFor1Hour": "Скрыть на 1 час",
+    "menuHidden": "Социальное меню скрыто на 1 час"
+  },
   "graveyard": {
     "loading": "Загрузка ваших NFT с кладбища...",
     "empty": {

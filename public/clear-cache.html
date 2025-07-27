@@ -42,23 +42,23 @@
   </head>
   <body>
     <h1>🧹 CrazyCube Cache Cleaner</h1>
-    <p>Очистить все данные браузера для перезагрузки сайта:</p>
+    <p>Clear all browser data to reload the site:</p>
 
-    <button class="btn" onclick="clearAll()">🗑️ Очистить ВСЁ</button>
+    <button class="btn" onclick="clearAll()">🗑️ Clear ALL</button>
     <button class="btn" onclick="clearStorage()">📦 LocalStorage</button>
     <button class="btn" onclick="clearWallet()">👛 Wallet Data</button>
     <button class="btn" onclick="clearTokens()">🪙 Token Cache</button>
 
     <div id="status"></div>
 
-    <h3>Что будет очищено:</h3>
+    <h3>What will be cleared:</h3>
     <ul>
-      <li>LocalStorage (балансы, настройки)</li>
-      <li>SessionStorage (временные данные)</li>
-      <li>Wallet Connection данные</li>
-      <li>Token кеш и балансы</li>
-      <li>NFT данные</li>
-      <li>Web3Modal кеш</li>
+      <li>LocalStorage (balances, settings)</li>
+      <li>SessionStorage (temporary data)</li>
+      <li>Wallet Connection data</li>
+      <li>Token cache and balances</li>
+      <li>NFT data</li>
+      <li>Web3Modal cache</li>
     </ul>
 
     <script>
@@ -72,9 +72,9 @@
         try {
           localStorage.clear();
           sessionStorage.clear();
-          showStatus('✅ Storage очищен!');
+          showStatus('✅ Storage cleared!');
         } catch (e) {
-          showStatus('❌ Ошибка очистки storage', 'warning');
+          showStatus('❌ Error clearing storage', 'warning');
         }
       }
 
@@ -89,9 +89,9 @@
               key.includes('connector')
           );
           walletKeys.forEach(key => localStorage.removeItem(key));
-          showStatus('✅ Wallet данные очищены!');
+          showStatus('✅ Wallet data cleared!');
         } catch (e) {
-          showStatus('❌ Ошибка очистки wallet', 'warning');
+          showStatus('❌ Error clearing wallet', 'warning');
         }
       }
 
@@ -106,9 +106,9 @@
               key.includes('nft')
           );
           tokenKeys.forEach(key => localStorage.removeItem(key));
-          showStatus('✅ Token кеш очищен!');
+          showStatus('✅ Token cache cleared!');
         } catch (e) {
-          showStatus('❌ Ошибка очистки tokens', 'warning');
+          showStatus('❌ Error clearing tokens', 'warning');
         }
       }
 
@@ -136,12 +136,12 @@
             });
           }
 
-          showStatus('✅ ВСЁ ОЧИЩЕНО! Перезагрузка через 2 секунды...');
+          showStatus('✅ EVERYTHING CLEARED! Reloading in 2 seconds...');
           setTimeout(() => {
             window.location.href = '/';
           }, 2000);
         } catch (e) {
-          showStatus('❌ Ошибка полной очистки', 'warning');
+          showStatus('❌ Error during full cleanup', 'warning');
         }
       }
 

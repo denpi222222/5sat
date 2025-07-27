@@ -62,13 +62,14 @@ export const SocialSidebar = React.memo(function SocialSidebar() {
 
       return () => clearTimeout(resetTimer);
     }
+    return;
   }, [isManuallyClosed, isMobile]);
 
 
 
   // Define styles based on device - SOCIAL ICONS ON TOP FOR MOBILE
   const sidebarClass = isMobile
-    ? 'fixed top-16 left-0 right-0 z-50 flex-row justify-center'
+    ? 'fixed top-20 left-0 right-0 z-50 flex-row justify-center'
     : 'fixed top-1/2 -translate-y-1/2 left-0 z-50 flex-col';
 
   return (

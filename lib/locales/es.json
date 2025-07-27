@@ -405,6 +405,13 @@
     "goToCollection": "Ir a la colección",
     "total": "total"
   },
+  "social": {
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "twitter": "Twitter/X",
+    "hideFor1Hour": "Ocultar por 1 hora",
+    "menuHidden": "Menú social oculto por 1 hora"
+  },
   "market": {
     "loading": "Cargando datos del mercado...",
     "failed": "Error al cargar datos del mercado",

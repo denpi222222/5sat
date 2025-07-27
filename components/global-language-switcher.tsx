@@ -18,10 +18,35 @@ export function GlobalLanguageSwitcher() {
 
   // Restore hidden flag on mount (mobile only)
   useEffect(() => {
-    if (!isMobile) { setReady(true); return; }
-    const isHidden = localStorage.getItem('crazycube:langSwitcher:hidden') === '1';
-    setHidden(isHidden);
-    setReady(true);
+    if (!isMobile) { 
+      setReady(true); 
+      return; 
+    }
+    
+    const hiddenUntil = localStorage.getItem('crazycube:langSwitcher:hiddenUntil');
+    if (hiddenUntil) {
+      const hiddenUntilTime = parseInt(hiddenUntil, 10);
+      if (Date.now() < hiddenUntilTime) {
+        setHidden(true);
+        setReady(true);
+        // Автоматически показать после истечения времени
+        const timeout = setTimeout(() => {
+          setHidden(false);
+          localStorage.removeItem('crazycube:langSwitcher:hiddenUntil');
+        }, hiddenUntilTime - Date.now());
+        return () => clearTimeout(timeout);
+      } else {
+        // Время истекло, показываем
+        localStorage.removeItem('crazycube:langSwitcher:hiddenUntil');
+        setHidden(false);
+        setReady(true);
+        return;
+      }
+    } else {
+      setHidden(false);
+      setReady(true);
+      return;
+    }
   }, [isMobile]);
 
   if (!ready || hidden) return null;
@@ -32,7 +57,12 @@ export function GlobalLanguageSwitcher() {
         <button
           aria-label="Hide translator"
           className="absolute -top-2 -right-2 bg-black/70 border border-slate-800 rounded-full p-1"
-          onClick={() => { localStorage.setItem('crazycube:langSwitcher:hidden','1'); setHidden(true); }}
+          onClick={() => {
+            // Скрыть на 1 час
+            const hideUntil = Date.now() + 60 * 60 * 1000;
+            localStorage.setItem('crazycube:langSwitcher:hiddenUntil', String(hideUntil));
+            setHidden(true);
+          }}
         >
           ×
         </button>

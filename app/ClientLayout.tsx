@@ -20,7 +20,7 @@ import { useWalletEvents } from '@/hooks/use-wallet-events';
 import { EthereumProviderSafe } from '@/components/ethereum-provider-safe';
 import { GlobalLanguageSwitcher } from '@/components/global-language-switcher';
 import EthereumGuard from '@/components/EthereumGuard';
-import SocialTopBanner from '@/components/SocialTopBanner';
+
 
 // Create a client for React Query
 const queryClient = new QueryClient();
@@ -161,10 +161,9 @@ export default function ClientLayout({
                         <EthereumGuard />
                         <div className='relative flex min-h-screen flex-col'>
                           <GlobalLanguageSwitcher />
+                          <SocialSidebar />
                           {children}
                           <BuildErrorDisplay />
-                          <SocialSidebar />
-                          <SocialTopBanner />
                         </div>
                       </SimpleToastProvider>
                     </WalletEventHandler>

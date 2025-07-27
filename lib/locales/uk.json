@@ -19,6 +19,13 @@
     "retry": "Повторити",
     "total": "всього"
   },
+  "social": {
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "twitter": "Twitter/X",
+    "hideFor1Hour": "Приховати на 1 годину",
+    "menuHidden": "Соціальне меню приховано на 1 годину"
+  },
   "graveyard": {
     "loading": "Завантаження ваших NFT з кладовища...",
     "empty": {
