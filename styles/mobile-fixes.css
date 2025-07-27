@@ -215,9 +215,9 @@
 /* Accessibility improvements for mobile */
 @media (prefers-reduced-motion: reduce) {
   .mobile * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 200ms !important;
+    /* keep animations but shorter on reduce */
+    transition-duration: 200ms !important;
   }
 }
 
@@ -285,4 +285,16 @@
   .mobile .ethereum-provider-safe > div:first-child {
     display: none !important;
   }
+}
+
+/* Hide desktop/Windows-like menu on small screens */
+@media (max-width: 768px) {
+  .desktop-menu, .windows-menu, .sidebar-desktop {
+    display: none !important;
+  }
+}
+
+/* Make floating banners non-overlapping with mobile bottom nav */
+@media (max-width: 768px) {
+  .mobile-nav { padding-bottom: env(safe-area-inset-bottom); }
 }

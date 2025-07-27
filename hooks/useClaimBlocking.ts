@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import { useAccount } from 'wagmi';
 
 const CLAIM_BLOCK_KEY = 'crazycube:claimSectionBlocked';
+import { useChainId } from 'wagmi';
 const BLOCK_DURATION = 4 * 60 * 1000; // 4 minutes
 
 export const useClaimBlocking = () => {
+  const chainId = (typeof window !== 'undefined' ? (window as any).ethereum?.chainId : undefined) || useChainId?.() || undefined;
   const { address } = useAccount();
   const [isBlocked, setIsBlocked] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
@@ -14,10 +16,18 @@ export const useClaimBlocking = () => {
     if (typeof window === 'undefined' || !address) return { isBlocked: false, timeLeft: 0 };
     
     try {
-      const stored = localStorage.getItem(CLAIM_BLOCK_KEY);
+      const stored = localStorage.getItem(`${CLAIM_BLOCK_KEY}:${chainId || 'unknown'}`);
       if (!stored) return { isBlocked: false, timeLeft: 0 };
       
       const blockData = JSON.parse(stored);
+      
+      // Validate blockData structure
+      if (!blockData || typeof blockData !== 'object' || !blockData.blockedUntil) {
+        console.warn('Invalid block data found, removing...');
+        localStorage.removeItem(`${CLAIM_BLOCK_KEY}:${chainId || 'unknown'}`);
+        return { isBlocked: false, timeLeft: 0 };
+      }
+      
       const now = Date.now();
       const timeRemaining = blockData.blockedUntil - now;
       
@@ -26,11 +36,13 @@ export const useClaimBlocking = () => {
         return { isBlocked: true, timeLeft: Math.ceil(timeRemaining / 1000) };
       } else {
         // Block expired, remove it
-        localStorage.removeItem(CLAIM_BLOCK_KEY);
+        localStorage.removeItem(`${CLAIM_BLOCK_KEY}:${chainId || 'unknown'}`);
         return { isBlocked: false, timeLeft: 0 };
       }
     } catch (error) {
       console.error('Error checking claim block status:', error);
+      // Clean up corrupted data
+      localStorage.removeItem(`${CLAIM_BLOCK_KEY}:${chainId || 'unknown'}`);
       return { isBlocked: false, timeLeft: 0 };
     }
   };
@@ -46,7 +58,7 @@ export const useClaimBlocking = () => {
         address: address
       };
       
-      localStorage.setItem(CLAIM_BLOCK_KEY, JSON.stringify(blockData));
+      localStorage.setItem(`${CLAIM_BLOCK_KEY}:${chainId || 'unknown'}`, JSON.stringify(blockData));
       setIsBlocked(true);
       setTimeLeft(240); // 4 minutes in seconds
       console.log('🔒 Claim section blocked for 4 minutes, localStorage set');

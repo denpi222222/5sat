@@ -466,9 +466,9 @@
 /* Add optimizations for reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 200ms !important;
+    /* keep animations but make them faster on reduce */
+    transition-duration: 200ms !important;
     scroll-behavior: auto !important;
   }
 }
