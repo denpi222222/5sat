@@ -13,13 +13,13 @@ interface ShatterImageProps {
   src: string;
   alt?: string;
   className?: string;
-  /** сколько максимум кусочков делаем (6‑12) */
+  /** maximum number of pieces to create (6-12) */
   maxPieces?: number;
-  /** через сколько начать сыпаться (сек) */
+      /** delay before starting to fall (seconds) */
   stillDelay?: number;
-  /** сколько секунд вся анимация (сек) */
+      /** total animation duration (seconds) */
   explodeDuration?: number;
-  /** режим */
+      /** mode */
   mode?: ShatterMode;
   priority?: boolean;
 }
@@ -29,7 +29,7 @@ export function ShatterImage({
   alt = '',
   className = '',
   maxPieces = 12,
-  stillDelay = 5, // ← требование: 5 c (увеличено время показа)
+      stillDelay = 5, // ← requirement: 5s (increased display time)
   mode = 'shatter',
   priority = false,
 }: ShatterImageProps) {
@@ -37,7 +37,7 @@ export function ShatterImage({
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [ready, setReady] = useState(false);
 
-  /* ----------------- fly (оставил без изменений) ----------------- */
+  /* ----------------- fly (left unchanged) ----------------- */
   const runFly = useCallback(() => {
     const img = imgRef.current;
     const wrap = wrapRef.current;
@@ -62,24 +62,24 @@ export function ShatterImage({
       });
   }, [stillDelay]);
 
-  /* ----------------- shatter (улучшенная логика) ----------------- */
+  /* ----------------- shatter (improved logic) ----------------- */
   const runShatter = useCallback(() => {
     const img = imgRef.current;
     const wrap = wrapRef.current;
     if (!img || !wrap) return;
 
-    // Фиксируем позицию и размеры контейнера
+    // Fix container position and dimensions
     const { width, height } = wrap.getBoundingClientRect();
     wrap.style.width = `${width}px`;
     wrap.style.height = `${height}px`;
     wrap.style.overflow = 'hidden';
     wrap.style.position = 'relative';
 
-    /* создаём кусочки */
+    /* create pieces */
     const pieces: HTMLDivElement[] = [];
-    const pieceCount = Math.max(6, Math.min(maxPieces, 12)); // границы 6‑12
+    const pieceCount = Math.max(6, Math.min(maxPieces, 12)); // bounds 6-12
 
-    // Создаем сетку 3x3 или 4x4 в зависимости от количества кусочков
+    // Create 3x3 or 4x4 grid depending on number of pieces
     const gridSize = pieceCount <= 9 ? 3 : 4;
     const pw = width / gridSize;
     const ph = height / gridSize;
@@ -110,7 +110,7 @@ export function ShatterImage({
 
     const tl = gsap.timeline();
 
-    // показать исходник БЕЗ движения - фиксируем позицию
+    // show original WITHOUT movement - fix position
     tl.set(img, {
       x: 0,
       y: 0,
@@ -120,10 +120,10 @@ export function ShatterImage({
     });
     tl.to(img, { opacity: 1, duration: 0.3 });
 
-    // ждём stillDelay, затем начинаем разрушение
+    // wait for stillDelay, then start destruction
     tl.addLabel('shatterStart', `+=${stillDelay}`);
 
-    // сначала показываем все кусочки одновременно
+    // first show all pieces simultaneously
     tl.to(
       pieces,
       {
@@ -133,7 +133,7 @@ export function ShatterImage({
       'shatterStart'
     );
 
-    // плавно скрываем оригинальную картинку БЕЗ движения
+    // smoothly hide original image WITHOUT movement
     tl.to(
       img,
       {
@@ -144,10 +144,10 @@ export function ShatterImage({
       'shatterStart+=0.3'
     );
 
-    // анимируем кусочки с разными задержками для 50-секундной анимации
+    // animate pieces with different delays for 50-second animation
     pieces.forEach((piece, index) => {
-      const delay = index * 1.5; // увеличенная задержка между кусочками
-      const duration = gsap.utils.random(40, 45); // длительность для 50-секундной анимации
+              const delay = index * 1.5; // increased delay between pieces
+              const duration = gsap.utils.random(40, 45); // duration for 50-second animation
 
       tl.to(
         piece,
@@ -155,13 +155,13 @@ export function ShatterImage({
           duration: duration,
           x: gsap.utils.random(-1200, 1200),
           y: gsap.utils.random(-1200, 1200),
-          rotation: gsap.utils.random(-3600, 3600), // 10 полных оборотов
+          rotation: gsap.utils.random(-3600, 3600), // 10 full rotations
           scale: gsap.utils.random(0.01, 0.15),
           opacity: 0,
-          ease: 'power1.out', // очень медленное затухание
+          ease: 'power1.out', // very slow fade out
           onComplete: () => piece.remove(),
         },
-        `shatterStart+=${delay + 1}` // начинаем после того как кусочки появились
+                  `shatterStart+=${delay + 1}` // start after pieces have appeared
       );
     });
   }, [src, maxPieces, stillDelay]);

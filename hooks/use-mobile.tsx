@@ -7,21 +7,21 @@ export function useMobile() {
 
   useEffect(() => {
     const checkDevice = () => {
-      // ПРОСТАЯ ПРОВЕРКА - только по размеру экрана
+      // SIMPLE CHECK - only by screen size
       const screenWidth = window.innerWidth;
       const screenHeight = window.innerHeight;
       
-      // Мобильное устройство = узкий экран (меньше 768px ширины)
+              // Mobile device = narrow screen (less than 768px width)
       const isMobileDevice = screenWidth < 768;
       
       setIsMobile(isMobileDevice);
     };
 
-    // Выполняем проверку при загрузке и при изменении размера окна
+    // Perform check on load and when window size changes
     checkDevice();
     window.addEventListener('resize', checkDevice);
 
-    // Очищаем слушатель при выходе
+    // Clean up listener on unmount
     return () => window.removeEventListener('resize', checkDevice);
   }, []);
 

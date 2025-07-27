@@ -90,7 +90,7 @@ export default function PingPage() {
     <div
       className='min-h-screen mobile-content-wrapper relative bg-gradient-to-br from-sky-900 via-cyan-900 to-sky-900 p-4'
     >
-      {/* Градиентный фон на весь экран */}
+      {/* Full screen gradient background */}
       <div className='fixed inset-0 -z-10 bg-gradient-to-br from-sky-900 via-cyan-900 to-sky-900' />
       
       {/* Cosmic rain of golden cubes - always show */}

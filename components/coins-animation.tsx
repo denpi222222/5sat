@@ -10,7 +10,7 @@ interface CoinsAnimationProps {
   className?: string;
   /** Base intensity multiplier. 1 = default. Increase for more coins. */
   intensity?: number;
-  /** Цвет монет: gold (по умолчанию) или blue */
+  /** Coin color: gold (default) or blue */
   theme?: 'gold' | 'blue';
 }
 
@@ -24,11 +24,11 @@ export function CoinsAnimation({
   intensity,
   theme = 'gold',
 }: CoinsAnimationProps) {
-  // Если передан intensity, используем его для density (для обратной совместимости)
+      // If intensity is passed, use it for density (for backward compatibility)
   const effectiveDensity =
     intensity !== undefined ? density * intensity : density;
 
-  // Pre-generate список монет с рандомными параметрами (useMemo)
+      // Pre-generate list of coins with random parameters (useMemo)
   const coins = useMemo(() => {
     const vw = typeof window !== 'undefined' ? window.innerWidth : 1440;
     const isMobile = vw < 768;

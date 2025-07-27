@@ -45,7 +45,7 @@ export const TabNavigation = React.memo(function TabNavigation() {
   );
 
   useEffect(() => {
-    // безопасный префетч
+    // safe prefetch
     // @ts-ignore
     if (typeof router.prefetch === 'function') {
       tabs.forEach((tab) => {

@@ -85,7 +85,7 @@ export default function BurnPage() {
     <div
       className='min-h-screen mobile-content-wrapper relative p-4'
     >
-      {/* Градиентный фон на весь экран */}
+      {/* Full screen gradient background */}
       <div className='fixed inset-0 -z-10 bg-gradient-to-br from-red-900 via-orange-900 to-red-900' />
       {/* Fire animation anchored to bottom - always show */}
       <div className='fixed bottom-0 inset-x-0 h-56 pointer-events-none z-10'>
@@ -265,7 +265,7 @@ export default function BurnPage() {
                   index={idx}
                   onActionComplete={() => {
                     refreshPage();
-                    // Удалён повторный вызов refetch через 3 секунды
+                    // Removed repeated refetch call after 3 seconds
                   }}
                 />
               ))}

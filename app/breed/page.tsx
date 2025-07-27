@@ -87,7 +87,7 @@ export default function BreedPage() {
   // Function to set cooldown on bred NFTs (3 minutes for parents)
   const addBredNFTsCooldown = useCallback((usedTokenIds: number[]) => {
     const now = Date.now();
-    const cooldownDuration = 3 * 60 * 1000; // 3 минуты в миллисекундах
+    const cooldownDuration = 3 * 60 * 1000; // 3 minutes in milliseconds
 
     setBredNFTsCooldown(prev => {
       const newCooldowns = { ...prev };
@@ -480,7 +480,7 @@ export default function BreedPage() {
       setIsBreeding(false);
       setShowBreedingEffect(false);
     }
-    // Сбросить флаги, когда статус сбросится
+    // Reset flags when status resets
     if (!isTxSuccess) shownSuccessToast.current = false;
     if (!isTxError) shownErrorToast.current = false;
   }, [isTxSuccess, isTxError, selectedNFTs, txError?.message, txHash]);
@@ -502,7 +502,7 @@ export default function BreedPage() {
 
   return (
     <div className='min-h-screen mobile-content-wrapper relative p-4'>
-      {/* Градиентный фон на весь экран */}
+      {/* Full screen gradient background */}
       <div className='fixed inset-0 -z-10 bg-gradient-to-br from-pink-900 via-purple-900 to-pink-900' />
       
       {/* Background hearts rain */}

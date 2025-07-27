@@ -37,7 +37,7 @@ export function SimpleToastProvider({
     const toastWithId = { ...newToast, id };
 
     setToasts(prev => {
-      // Удалена проверка на дубликаты
+      // Removed duplicate check
       // Keep max 3 toasts
       const newToasts = [toastWithId, ...prev.slice(0, 2)];
       return newToasts;

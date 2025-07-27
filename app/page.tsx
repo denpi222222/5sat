@@ -635,7 +635,7 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          {/* Новая карточка Bridge NFT */}
+          {/* New Bridge NFT Card */}
           <motion.div
             {...(shouldAnimate && {
               whileHover: currentVariant.hover,
@@ -655,7 +655,7 @@ export default function HomePage() {
                 '/bridge',
                 t('sections.bridge.button', 'Bridge'),
                 <span className='w-7 h-5 mr-2 flex items-center justify-center relative'>
-                  {/* Мост */}
+                  {/* Bridge */}
                   <svg width='20' height='20' viewBox='0 0 20 20' fill='none'>
                     <path
                       d='M2 10h16M10 2v16'
@@ -664,7 +664,7 @@ export default function HomePage() {
                       strokeLinecap='round'
                     />
                   </svg>
-                  {/* Анимированная точка */}
+                  {/* Animated dot */}
                   <motion.div
                     className='absolute top-1 left-0 w-2 h-2 rounded-full bg-cyan-400 shadow-lg'
                     animate={{ x: [0, 16, 0] }}
