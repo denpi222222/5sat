@@ -88,12 +88,12 @@ export default function BurnPage() {
       {/* Full screen gradient background */}
       <div className='fixed inset-0 -z-10 bg-gradient-to-br from-red-900 via-orange-900 to-red-900' />
       {/* Fire animation anchored to bottom - always show */}
-      <div className='fixed bottom-0 inset-x-0 h-56 pointer-events-none z-10'>
-        <FireAnimation
-          intensity={isMobile ? 1 : 3}
-          className='w-full h-full'
-        />
-      </div>
+        <div className='fixed bottom-0 inset-x-0 h-56 pointer-events-none z-10'>
+          <FireAnimation
+            intensity={isMobile ? 1 : 3}
+            className='w-full h-full'
+          />
+        </div>
 
       <div className='container mx-auto relative z-10'>
         {/* Header like in breed page */}

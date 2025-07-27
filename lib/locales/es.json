@@ -298,9 +298,94 @@
     "connected": "Conectado",
     "instruction": "Instrucción",
     "gameGuide": "Guía del Juego CrazyCube",
-    "gameGuideContent": "🎮 Guía del Juego CrazyCube\n\n🔹 Primeros Pasos\n• Obtén tokens CRAA — para tarifas de gas y acciones del juego\n• Compra NFTs CrazyCube en el mercado\n\n🔹 Cómo Empezar a Jugar\n• Ve a la pestaña Ping — verás tus NFTs\n• Para un cubo nuevo, presiona Activar — este es el primer Ping, no da CRAA pero inicia el temporizador\n• Después de la activación, puedes hacer ping (hacer clic en Ping). Por defecto es una vez cada 10 días, las recompensas comienzan a acumularse\n• Cada Ping exitoso trae CRAA — la cantidad depende de:\n  - Rareza del cubo (Common, Rare, Mystic, etc.)\n  - Tu bono de experiencia — crece cada 10 días sin perder pings\n  - Tiempo entre pings (si pasaron más períodos, más CRAA)\n\n🔹 Qué es el Bono de Experiencia\n• Inicialmente todos los cubos tienen penalización -18.9%\n• Cada 10 días sin perder — +2.7%\n• Máximo que puedes alcanzar +97.2%\n• Si pierdes más de 10 días — el bono no aumentará\n• Si pierdes 20+ días — el bono se reinicia a -18.9%\n\n🔹 Cómo Obtener CRAA\n• CRAA no cae a la billetera inmediatamente, sino que se acumula dentro del cubo (así cada NFT tiene valor real)\n• Para recoger — necesitas quemar el cubo (Burn) (tu cubo va a la sección cementerio y ya no te pertenece, obtienes monedas CRAA en la sección claim)\n\n🔹 Cómo Quemar\n• Ve a la sección Burn\n• Elige cubo y tiempo de espera:\n  - 12 horas → 60% al jugador\n  - 24 horas → 70%\n  - 48 horas → 80%\n• El resto se divide entre el pool y quema permanente (va a la billetera oficial muerta)\n• Después del tiempo elegido, ve y presiona Claim — CRAA vendrá a tu billetera\n\n🔹 Cómo Revivir Cubo (Breed)\n• Ve a la sección Breed\n• Elige 2 cubos vivos (que tengan estrellas y no estén en enfriamiento)\n• Paga CRAA (8% del precio mínimo del mercado, constantemente actualizado)\n• Un NFT aleatorio del cementerio regresará a ti como nuevo, con todas las estrellas pero sin monedas:\n  - El bono se reinicia (de vuelta a -18.9%)\n  - Las estrellas se restauran\n  - Puede hacer ping de nuevo desde cero\n\n🔹 Dónde está CRAA en el Sistema\n• CRAA para Ping viene del pool de recompensas mensual\n• CRAA gastado en Breed regresa a este pool\n• CRAA de Burn se quema para siempre\n• Todo lo quemado va a la billetera especial 0x...dead y desaparece para siempre\n\n🔹 Comisiones del Token CRAA\n• 3% de comisión en transferencias — va al contrato del juego\n• 10% de comisión en ventas DEX — va al contrato del juego\n• 0% de comisión en compras DEX — sin comisión al comprar\n• Todas las comisiones apoyan el ecosistema del juego y el pool de recompensas\n\n🔹 Estrategia de Ejemplo\nTienes tres cubos:\n• Common (regular) — hazle ping, el bono crece 2.7% cada 10 días hasta 97%, luego se detiene. Puedes vender, transferir NFT, el bono se preserva\n• Rare — úsalo para Breed o acumula CRAA\n• Mystic — raro, trae más CRAA, mejor no quemar\n\nJuega tranquilo:\n• Una vez cada 10 días entra y presiona Ping\n• Periódicamente quema cubos débiles → obtén tokens\n• O revive muertos — obtén oportunidad para uno más raro\n\n💡 Consejos\n¿Quieres máxima ganancia? — haz ping regularmente y no quemes cubos raros demasiado pronto.\n💥 Los tokens quemados no regresarán — esto aumenta el valor de los CRAA restantes.\n\n🚀 Nuestra Visión\nNuestros planes dentro de 1-2 meses son ajustar el gameplay y renunciar a los derechos de administrador en los contratos NFT y token. Queremos conducir un experimento social y crear gameplay completamente social donde no hay posibilidades de cambiar nada — solo el mercado y la gente deciden.\n\nEl equipo no tiene bonos en el contrato en forma de monedas CRAA. Puedes crear una billetera, por ejemplo, en Rabby wallet en 1 minuto y jugar nuestro juego.\n\nPronto nuestro juego será 100% descentralizado con autorregulación del mercado.",
-    "switchNetwork": "Cambiar Red",
-    "gameGuideContent": "🎮 Guía del Juego CrazyCube\n\n🔹 Para Empezar\n• Consigue tokens CRA — para las tasas de gas y acciones del juego\n• Compra NFTs de CrazyCube en el marketplace\n\n🔹 Cómo Empezar a Jugar\n• Ve a la pestaña de Ping — verás tus NFTs\n• Para un cubo nuevo, presiona Activar — este es el primer Ping, no da CRA pero inicia el temporizador\n• Después de la activación, puedes hacer ping (clic en Ping). Por defecto es una vez cada 10 días, las recompensas comienzan a acumularse\n• Cada Ping exitoso trae CRA — la cantidad depende de:\n  - La rareza del cubo (Común, Raro, Místico, etc.)\n  - Tu bonificación de experiencia — crece cada 10 días sin perder pings\n  - El tiempo entre pings (si pasaron más períodos, más CRA)\n\n🔹 Qué es la Bonificación de Experiencia\n• Inicialmente todos los cubos tienen una penalización de -18.9%\n• Cada 10 días sin falta — +2.7%\n• El máximo que puedes alcanzar es +97.2%\n• Si te saltas más de 10 días — la bonificación no aumentará\n• Si te saltas más de 20 días — la bonificación se reinicia a -18.9%\n\n🔹 Cómo Conseguir CRA\n• El CRA no cae en la cartera inmediatamente, sino que se acumula dentro del cubo (de esta manera cada NFT tiene un valor real)\n• Para recolectar — necesitas quemar el cubo (Burn) (tu cubo va a la sección del cementerio y ya no te pertenece, obtienes monedas de CRA en la sección de reclamación)\n\n🔹 Cómo Quemar\n• Ve a la sección de Quemar\n• Elige el cubo y el tiempo de espera:\n  - 12 horas → 60% para el jugador\n  - 24 horas → 70%\n  - 48 horas → 80%\n• El resto se divide entre la piscina y la quema permanente (va a la cartera muerta oficial)\n• Después del tiempo elegido, ve y presiona Reclamar — el CRA llegará a tu cartera\n\n🔹 Cómo Revivir un Cubo (Cruzar)\n• Ve a la sección de Cruzar\n• Elige 2 cubos vivos (que tengan estrellas y no estén en enfriamiento)\n• Paga CRA (8% del precio mínimo del marketplace, actualizado constantemente)\n• Un NFT aleatorio del cementerio volverá a ti como nuevo, con todas las estrellas pero sin monedas:\n  - La bonificación se reinicia (vuelve a -18.9%)\n  - Las estrellas se restauran\n  - Se puede hacer ping de nuevo desde cero\n\n🔹 Dónde está el CRA en el Sistema\n• El CRA para el Ping proviene de la piscina de recompensas mensual\n• El CRA gastado en Cruzar vuelve a esta piscina\n• El CRA de la Quema se quema para siempre\n• Todo lo quemado va a una cartera especial 0x...dead y desaparece para siempre\n\n🔹 Tasas del Token CRA\n• 3% de tasa en las transferencias — va al contrato del juego\n• 10% de tasa en las ventas de DEX — va al contrato del juego\n• 0% de tasa en las compras de DEX — sin tasa al comprar\n• Todas las tasas apoyan el ecosistema del juego y la piscina de recompensas\n\n🔹 Estrategia de Ejemplo\nTienes tres cubos:\n• Común (regular) — hazle ping, la bonificación crece un 2.7% cada 10 días hasta el 97%, luego se detiene. Se puede vender, transferir el NFT, la bonificación se conserva\n• Raro — úsalo para Cruzar o acumular CRA\n• Místico — raro, trae más CRA, mejor no quemarlo\n\nJuega con calma:\n• Una vez cada 10 días inicia sesión y presiona Ping\n• Periódicamente quema cubos débiles → obtén tokens\n• O revive los muertos — obtén la oportunidad de uno más raro\n\n💡 Consejos\n¿Quieres el máximo beneficio? — haz ping regularmente y no quemes los cubos raros demasiado pronto.\n💥 Los tokens quemados no volverán — esto aumenta el valor del CRA restante.\n\n🚀 Nuestra Visión\nNuestros planes en 1-2 meses son ajustar la jugabilidad y renunciar a los derechos de administrador en los contratos de NFT y tokens. Queremos realizar un experimento social y crear una jugabilidad totalmente social donde no haya posibilidades de cambiar nada — solo el mercado y la gente deciden.\n\nEl equipo no tiene bonificaciones en el contrato en forma de monedas de CRA. Puedes crear una cartera, por ejemplo, en la cartera de Rabby en 1 minuto y jugar a nuestro juego.\n\nPronto nuestro juego será 100% descentralizado con autorregulación del mercado."
+    "gameGuideContent": {
+      "title": "🎮 Guía del Juego CrazyCube",
+      "gettingStarted": {
+        "title": "🔹 Para Empezar",
+        "getCRAA": "• Obtén tokens CRAA — para tarifas de gas y acciones del juego",
+        "buyNFTs": "• Compra NFTs CrazyCube en el marketplace"
+      },
+      "howToStart": {
+        "title": "🔹 Cómo Empezar a Jugar",
+        "goToPing": "• Ve a la pestaña Ping — verás tus NFTs",
+        "activate": "• Para un cubo nuevo, presiona Activar — este es el primer Ping, no da CRAA pero inicia el temporizador",
+        "pingAfterActivation": "• Después de la activación, puedes hacer ping (clic en Ping). Por defecto es una vez cada 10 días, las recompensas comienzan a acumularse",
+        "pingRewards": "• Cada Ping exitoso trae CRAA — la cantidad depende de:",
+        "rarityFactor": "- Rareza del cubo (Common, Rare, Mystic, etc.)",
+        "experienceBonus": "- Tu bono de experiencia — crece cada 10 días sin perder pings",
+        "timeFactor": "- Tiempo entre pings (si pasaron más períodos, más CRAA)"
+      },
+      "experienceBonus": {
+        "title": "🔹 Qué es el Bono de Experiencia",
+        "initialPenalty": "• Inicialmente todos los cubos tienen penalización -18.9%",
+        "bonusGrowth": "• Cada 10 días sin perder — +2.7%",
+        "maxBonus": "• Máximo que puedes alcanzar +97.2%",
+        "miss10Days": "• Si pierdes más de 10 días — el bono no aumentará",
+        "miss20Days": "• Si pierdes 20+ días — el bono se reinicia a -18.9%"
+      },
+      "howToGetCRAA": {
+        "title": "🔹 Cómo Obtener CRAA",
+        "accumulation": "• CRAA no cae a la billetera inmediatamente, sino que se acumula dentro del cubo (así cada NFT tiene valor real)",
+        "collect": "• Para recoger — necesitas quemar el cubo (Burn) (tu cubo va a la sección cementerio y ya no te pertenece, obtienes monedas CRAA en la sección claim)"
+      },
+      "howToBurn": {
+        "title": "🔹 Cómo Quemar",
+        "goToBurn": "• Ve a la sección Burn",
+        "chooseCube": "• Elige cubo y tiempo de espera:",
+        "time12h": "- 12 horas → 60% al jugador",
+        "time24h": "- 24 horas → 70%",
+        "time48h": "- 48 horas → 80%",
+        "restSplit": "• El resto se divide entre el pool y quema permanente (va a la billetera oficial muerta)",
+        "claim": "• Después del tiempo elegido, ve y presiona Claim — CRAA vendrá a tu billetera"
+      },
+      "howToRevive": {
+        "title": "🔹 Cómo Revivir Cubo (Breed)",
+        "goToBreed": "• Ve a la sección Breed",
+        "choose2Cubes": "• Elige 2 cubos vivos (que tengan estrellas y no estén en enfriamiento)",
+        "payCRAA": "• Paga CRAA (8% del precio mínimo del mercado, constantemente actualizado)",
+        "randomNFT": "• Un NFT aleatorio del cementerio regresará a ti como nuevo, con todas las estrellas pero sin monedas:",
+        "bonusReset": "- El bono se reinicia (de vuelta a -18.9%)",
+        "starsRestored": "- Las estrellas se restauran",
+        "canPingAgain": "- Puede hacer ping de nuevo desde cero"
+      },
+      "crasInSystem": {
+        "title": "🔹 Dónde está CRAA en el Sistema",
+        "pingRewards": "• CRAA para Ping viene del pool de recompensas mensual",
+        "breedReturns": "• CRAA gastado en Breed regresa a este pool",
+        "burnForever": "• CRAA de Burn se quema para siempre",
+        "burnedGoesTo": "• Todo lo quemado va a la billetera especial 0x...dead y desaparece para siempre"
+      },
+      "crasFees": {
+        "title": "🔹 Comisiones del Token CRAA",
+        "transferFee": "• 3% de comisión en transferencias — va al contrato del juego",
+        "dexSalesFee": "• 10% de comisión en ventas DEX — va al contrato del juego",
+        "dexPurchaseFee": "• 0% de comisión en compras DEX — sin comisión al comprar",
+        "feesSupport": "• Todas las comisiones apoyan el ecosistema del juego y el pool de recompensas"
+      },
+      "exampleStrategy": {
+        "title": "🔹 Estrategia de Ejemplo",
+        "youHaveThree": "Tienes tres cubos:",
+        "common": "• Common (regular) — hazle ping, el bono crece 2.7% cada 10 días hasta 97%, luego se detiene. Puedes vender, transferir NFT, el bono se preserva",
+        "rare": "• Rare — úsalo para Breed o acumula CRAA",
+        "mystic": "• Mystic — raro, trae más CRAA, mejor no quemar",
+        "playCalmly": "Juega tranquilo:",
+        "pingEvery10Days": "• Una vez cada 10 días entra y presiona Ping",
+        "burnWeakCubes": "• Periódicamente quema cubos débiles → obtén tokens",
+        "reviveDead": "• O revive muertos — obtén oportunidad para uno más raro"
+      },
+      "tips": {
+        "title": "💡 Consejos",
+        "maxProfit": "¿Quieres máxima ganancia? — haz ping regularmente y no quemes cubos raros demasiado pronto.",
+        "burnedTokens": "💥 Los tokens quemados no regresarán — esto aumenta el valor de los CRAA restantes."
+      },
+      "vision": {
+        "title": "🚀 Nuestra Visión",
+        "plans": "Nuestros planes dentro de 1-2 meses son ajustar el gameplay y renunciar a los derechos de administrador en los contratos NFT y token. Queremos conducir un experimento social y crear gameplay completamente social donde no hay posibilidades de cambiar nada — solo el mercado y la gente deciden.",
+        "noBonuses": "El equipo no tiene bonos en el contrato en forma de monedas CRAA. Puedes crear una billetera, por ejemplo, en Rabby wallet en 1 minuto y jugar nuestro juego.",
+        "decentralized": "Pronto nuestro juego será 100% descentralizado con autorregulación del mercado."
+      }
+    },
+    "switchNetwork": "Cambiar Red"
   },
   "userNFTs": {
     "title": "Tus NFTs",

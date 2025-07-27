@@ -156,11 +156,11 @@ export const useBurnedNfts = () => {
               toBlock: latestBlock.number,
             });
 
-            tokenIds = allLogs.map((log: any) =>
-              (
-                decodeEventLog({ abi: GameContractABI, ...log }).args as any
-              ).tokenId.toString()
-            );
+          tokenIds = allLogs.map((log: any) =>
+            (
+              decodeEventLog({ abi: GameContractABI, ...log }).args as any
+            ).tokenId.toString()
+          );
           } catch (logErr) {
             console.log('getLogs failed, using empty result');
             tokenIds = [];
@@ -309,59 +309,59 @@ export const useBurnedNfts = () => {
                }
             } catch (mcErr) {
               // Fallback to individual calls
-              const chunkResults = await Promise.all(
-                slice.map(async tokenId => {
-                  try {
-                    const recordResult: any = await publicClient.readContract({
-                      address: GAME_CONTRACT_ADDRESS,
-                      abi: GameContractABI,
-                      functionName: 'burnRecords',
-                      args: [BigInt(tokenId)],
-                    });
+          const chunkResults = await Promise.all(
+            slice.map(async tokenId => {
+              try {
+                const recordResult: any = await publicClient.readContract({
+                  address: GAME_CONTRACT_ADDRESS,
+                  abi: GameContractABI,
+                  functionName: 'burnRecords',
+                  args: [BigInt(tokenId)],
+                });
 
-                    const [
-                      owner,
-                      totalAmount,
-                      claimAvailableTime,
-                      graveyardReleaseTime,
-                      claimed,
-                      waitPeriod,
-                    ] = recordResult;
+                const [
+                  owner,
+                  totalAmount,
+                  claimAvailableTime,
+                  graveyardReleaseTime,
+                  claimed,
+                  waitPeriod,
+                ] = recordResult;
 
-                    if (owner.toLowerCase() !== address.toLowerCase()) return null;
+                if (owner.toLowerCase() !== address.toLowerCase()) return null;
 
-                    let split = splitCache.get(Number(waitPeriod));
-                    if (!split) {
-                      const splitResult = (await publicClient.readContract({
-                        address: GAME_CONTRACT_ADDRESS,
-                        abi: GameContractABI,
-                        functionName: 'burnSplits',
-                        args: [waitPeriod],
-                      })) as [number, number, number];
+                let split = splitCache.get(Number(waitPeriod));
+                if (!split) {
+                  const splitResult = (await publicClient.readContract({
+                    address: GAME_CONTRACT_ADDRESS,
+                    abi: GameContractABI,
+                    functionName: 'burnSplits',
+                    args: [waitPeriod],
+                  })) as [number, number, number];
 
-                      const [playerBps, poolBps, burnBps] = splitResult;
-                      split = { playerBps, poolBps, burnBps };
-                      splitCache.set(Number(waitPeriod), split);
-                    }
+                  const [playerBps, poolBps, burnBps] = splitResult;
+                  split = { playerBps, poolBps, burnBps };
+                  splitCache.set(Number(waitPeriod), split);
+                }
 
-                    const playerShare =
-                      (totalAmount * BigInt(split.playerBps)) / 10000n;
+                const playerShare =
+                  (totalAmount * BigInt(split.playerBps)) / 10000n;
 
                     return {
-                      tokenId,
-                      record: {
-                        owner,
-                        totalAmount,
-                        claimAvailableTime,
-                        graveyardReleaseTime,
-                        claimed,
-                        waitPeriod,
-                      },
-                      split,
-                      playerShare,
-                      isReadyToClaim:
-                        !claimed && claimAvailableTime <= BigInt(chainNow),
-                    };
+                  tokenId,
+                  record: {
+                    owner,
+                    totalAmount,
+                    claimAvailableTime,
+                    graveyardReleaseTime,
+                    claimed,
+                    waitPeriod,
+                  },
+                  split,
+                  playerShare,
+                  isReadyToClaim:
+                    !claimed && claimAvailableTime <= BigInt(chainNow),
+                };
                   } catch (err) {
                     return null;
                   }
@@ -427,15 +427,15 @@ export const useBurnedNfts = () => {
                     isReadyToClaim:
                       !claimed && claimAvailableTime <= BigInt(chainNow),
                   };
-                } catch (err) {
-                  return null;
-                }
-              })
-            );
+              } catch (err) {
+                return null;
+              }
+            })
+          );
 
-            chunkResults.forEach(r => {
-              if (r) nftsInfo.push(r);
-            });
+          chunkResults.forEach(r => {
+            if (r) nftsInfo.push(r);
+          });
           }
         }
 

@@ -507,18 +507,18 @@ export default function BreedPage() {
       
       {/* Background hearts rain */}
       <div className='fixed inset-0 pointer-events-none z-0'>
-        <HeartRain
-          density={isMobile ? 15 : 30}
-          color='#fb7185'
-          className='mix-blend-screen'
-        />
-        {/* Background particles in pink/purple tones */}
-        <ParticleEffect
-          count={isMobile ? 8 : 30}
-          colors={['#ec4899', '#f472b6', '#c084fc', '#a855f7']}
-          speed={isMobile ? 0.3 : 0.5}
-          size={isMobile ? 4 : 7}
-        />
+      <HeartRain
+        density={isMobile ? 15 : 30}
+        color='#fb7185'
+        className='mix-blend-screen'
+      />
+      {/* Background particles in pink/purple tones */}
+      <ParticleEffect
+        count={isMobile ? 8 : 30}
+        colors={['#ec4899', '#f472b6', '#c084fc', '#a855f7']}
+        speed={isMobile ? 0.3 : 0.5}
+        size={isMobile ? 4 : 7}
+      />
       </div>
       
       <div className='container mx-auto relative z-10'>

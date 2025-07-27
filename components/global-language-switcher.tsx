@@ -44,7 +44,7 @@ export function GlobalLanguageSwitcher() {
       }
     } else {
       setHidden(false);
-      setReady(true);
+    setReady(true);
       return;
     }
   }, [isMobile]);
