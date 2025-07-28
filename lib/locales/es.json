@@ -385,74 +385,7 @@
         "decentralized": "Pronto nuestro juego será 100% descentralizado con autorregulación del mercado."
       }
     },
-    "switchNetwork": "Cambiar Red"
-  },
-  "userNFTs": {
-    "title": "Tus NFTs",
-    "connectToView": "Conecta tu billetera para ver tus CrazyCube NFTs",
-    "errorLoading": "Error al cargar NFTs",
-    "noNFTs": "Aún no tienes CrazyCube NFTs",
-    "yourCrazyCubeNFTs": "Tus CrazyCube NFTs",
-    "showing": "Mostrando {{count}} de {{total}} NFTs"
-  },
-  "cubeAnimation": {
-    "loading": "Cargando...",
-    "loadingMessage": "¡Oh no, el sitio está atascado! Espera, solo somos perezosos 🦥",
-    "speechBubbles": [
-      "¡Cansado de estar de pie! 🥱",
-      "¡Oye, ¿a dónde se fueron todos?! 😱",
-      "¡Yo también me voy! 👋",
-      "¡Voy por pizza! 🍕",
-      "¡Hora de manicura! 💅"
-    ],
-    "partyBubble": "¡Sí! ¡Todos se fueron! ¡Hora de fiesta! 🎵🎉",
-    "whereIsEveryone": "¡Oye, ¿a dónde se fueron todos?! 😱",
-    "waitingForMusicPhrases": [
-      "¡Oye, enciende la música! 🎵",
-      "Aburrido sin música... 😴",
-      "¡Quiero bailar! ¡Necesito música! 💃",
-      "¡Alguien, presiona el botón! 👆"
-    ],
-    "partyPhrases": [
-      "¡Bailando toda la noche! 🕺",
-      "¡La fiesta apenas comienza! 🎉",
-      "¿Quién dijo que los cubos no pueden festejar? 🎵",
-      "¡Sube la música! 🔊",
-      "¡Soy el rey de esta fiesta! 👑",
-      "¡Nadie baila mejor que yo! 💃",
-      "¡Esta es mi canción favorita! 🎧",
-      "¡DJ, súbele! 🎚️",
-      "¡Cubos en la casa! 🏠",
-      "¡Fiesta hasta el amanecer! 🌅"
-    ],
-    "musicOn": "Apagar Música",
-    "musicOff": "Encender Música"
-  },
-  "social": {
-    "telegram": "Telegram",
-    "discord": "Discord",
-    "followUs": "Síguenos",
-    "megaGiveaway": "¡MEGA SORTEO!",
-    "supportAndWin": "¡Apóyanos y GANA NFT + tokens CRAA!",
-    "prizePool": "FONDO DE PREMIOS:",
-    "exclusiveNFTs": "NFTs Exclusivos",
-    "craTokens": "Tokens CRAA (varias cantidades)",
-    "discordRoles": "Roles especiales de Discord",
-    "bonusSurprises": "Bonificaciones y sorpresas",
-    "joinTelegram": "Únete a Telegram",
-    "joinDiscord": "Únete a Discord",
-    "twitterActions": "Acciones de Twitter:",
-    "followTwitter": "Seguir @crazy___cube",
-    "viewPost": "Ver publicación",
-    "like": "Me gusta",
-    "retweet": "Retweet",
-    "allDone": "¡LO HICE TODO!",
-    "later": "Más tarde",
-    "participateNow": "¡PARTICIPA AHORA!",
-    "weeklyGiveaway": "¡Sorteo cada semana entre participantes activos!",
-    "github": "GitHub",
-    "share": "Compartir",
-    "shareTitle": "CrazyCube - ¡Donde los cubos lloran y bromean!"
+    "gameGuideContent": "🎮 Guía del Juego CrazyCube\n\n🔹 Comenzando\n• Obtén tokens CRAA — para tarifas de gas y acciones del juego\n• Compra NFTs CrazyCube en el marketplace\n\n🔹 Cómo Empezar a Jugar\n• Ve a la pestaña Ping — verás tus NFTs\n• Para un nuevo cubo, presiona Activar — este es el primer Ping, no da CRAA pero inicia el temporizador\n• Después de la activación, puedes hacer ping (presiona Ping). Por defecto una vez cada 10 días, las recompensas comienzan a acumularse\n• Cada Ping exitoso trae CRAA — la cantidad depende de:\n  - Rareza del cubo (Common, Rare, Mystic, etc.)\n  - Tu bono de experiencia — crece cada 10 días sin perder pings\n  - Tiempo entre pings (si pasaron más períodos, más CRAA)\n\n🔹 Qué es el Bono de Experiencia\n• Inicialmente todos los cubos tienen penalización -18.9%\n• Cada 10 días sin perder — +2.7%\n• Máximo que puedes alcanzar +97.2%\n• Si pierdes más de 10 días — el bono no aumentará\n• Si pierdes 20+ días — el bono se reinicia a -18.9%\n\n🔹 Cómo Obtener CRAA\n• CRAA no cae a la billetera inmediatamente, sino que se acumula dentro del cubo (así cada NFT tiene valor real)\n• Para recolectar — necesitas quemar el cubo (Quemar) (tu cubo va a la sección cementerio y ya no te pertenece, obtienes monedas CRAA en la sección claim)\n\n🔹 Cómo Quemar\n• Ve a la sección Quemar\n• Elige cubo y tiempo de espera:\n  - 12 horas → 60% al jugador\n  - 24 horas → 70%\n  - 48 horas → 80%\n• El resto se divide entre el pool y quema permanente (va al dead wallet oficial)\n• Después del tiempo elegido, ve y presiona Reclamar — CRAA vendrá a tu billetera\n\n🔹 Cómo Revivir Cubo (Cruzar)\n• Ve a la sección Cruzar\n• Elige 2 cubos vivos (que tengan estrellas y no estén en cooldown)\n• Paga CRAA (8% del precio mínimo del marketplace, constantemente actualizado)\n• Un NFT aleatorio del cementerio regresará a ti como nuevo, con todas las estrellas pero sin monedas:\n  - El bono se reinicia (de vuelta a -18.9%)\n  - Las estrellas se restauran\n  - Puedes hacer ping de nuevo desde cero\n\n🔹 Dónde está CRAA en el Sistema\n• CRAA para Ping viene del pool de recompensas mensual\n• CRAA gastado en Cruzar regresa a este pool\n• CRAA de Quemar se quema para siempre\n• Todo lo quemado va al billetera especial 0x...dead y desaparece para siempre\n\n🔹 Comisiones del Token CRAA\n• 3% de comisión en transferencias — va al contrato del juego\n• 10% de comisión en ventas DEX — va al contrato del juego\n• 0% de comisión en compras DEX — sin comisión al comprar\n• Todas las comisiones apoyan el ecosistema del juego y el pool de recompensas\n\n🔹 Estrategia de Ejemplo\nTienes tres cubos:\n• Common (regular) — hazle ping, el bono crece 2.7% cada 10 días hasta 97%, luego se detiene. Puedes vender, transferir NFT, el bono se preserva\n• Rare — úsalo para Cruzar o acumula CRAA\n• Mystic — raro, trae más CRAA, mejor no quemar\n\nJuega tranquilo:\n• Una vez cada 10 días entra y presiona Ping\n• Periódicamente quema cubos débiles → obtén tokens\n• O revive muertos — obtén oportunidad para uno más raro\n\n💡 Consejos\n¿Quieres máxima ganancia? — haz ping regularmente y no quemes cubos raros demasiado pronto.\n💥 Los tokens quemados no regresarán — esto aumenta el valor de los CRAA restantes.\n\n🚀 Nuestra Visión\nNuestros planes dentro de 1-2 meses son ajustar el gameplay y renunciar a los derechos de administrador en los contratos NFT y token. Queremos conducir un experimento social y crear gameplay completamente social donde no hay posibilidades de cambiar nada — solo el mercado y la gente deciden.\n\nEl equipo no tiene bonos en el contrato en forma de monedas CRAA. Puedes crear una billetera, por ejemplo, en Rabby wallet en 1 minuto y jugar nuestro juego.\n\nPronto nuestro juego será 100% descentralizado con autorregulación del mercado."
   },
   "tabs": {
     "breed": "Cruzar",

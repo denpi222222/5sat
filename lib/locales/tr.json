@@ -338,74 +338,7 @@
         "decentralized": "Yakında oyunumuz pazar öz-düzenlemesi ile %100 merkezi olmayan olacak."
       }
     },
-    "switchNetwork": "Ağ Değiştir",
-    "notConnected": "Cüzdan bağlı değil",
-    "connectFirst": "Önce cüzdan bağlayın",
-    "connected": "Bağlandı"
-  },
-  "userNFTs": {
-    "title": "NFT'leriniz",
-    "connectToView": "CRAAzyCube NFT'lerinizi görmek için cüzdan bağlayın",
-    "errorLoading": "NFT'ler yüklenirken hata",
-    "noNFTs": "Henüz CRAAzyCube NFT'niz yok",
-    "yourCRAAzyCubeNFTs": "CRAAzyCube NFT'leriniz",
-    "showing": "{{total}} adet NFT'den {{count}} tanesi gösteriliyor"
-  },
-  "cubeAnimation": {
-    "loading": "Yükleniyor...",
-    "loadingMessage": "Ayy! Site dondu! Bekleyin, biraz tembeliz 🦥",
-    "speechBubbles": [
-      "Ayakta durmaktan sıkıldım! 🥱",
-      "Hey, herkes nereye gitti?! 😱",
-      "Ben de gidiyorum! 👋",
-      "Pizza almaya gidiyorum! 🍕",
-      "Manikür zamanı! 💅"
-    ],
-    "partyBubble": "Yaşasın! Herkes gitti! Parti zamanı! 🎵🎉",
-    "whereIsEveryone": "Hey, herkes nereye gitti?! 😱",
-    "waitingForMusicPhrases": [
-      "Hey, müzik aç! 🎵",
-      "Müziksiz sıkıcı... 😴",
-      "Dans etmek istiyorum! Müzik lazım! 💃",
-      "Biri düğmeye bassın! 👆"
-    ],
-    "partyPhrases": [
-      "Tüm gece dans! 🕺",
-      "Parti yeni başlıyor! 🎉",
-      "Kim dedi küpler parti yapamaz? 🎵",
-      "Müziği aç! 🔊",
-      "Bu partinin kralı benim! 👑",
-      "Benden iyi dans eden yok! 💃",
-      "En sevdiğim parça! 🎧",
-      "DJ, ses ver! 🎚️",
-      "Küpler burada! 🏠",
-      "Güneş doğana kadar parti! 🌞"
-    ],
-    "musicOn": "Müziği Kapat",
-    "musicOff": "Müziği Aç"
-  },
-  "social": {
-    "telegram": "Telegram",
-    "discord": "Discord",
-    "followUs": "Takip Et",
-    "megaGiveaway": "MEGA ÇEKİLİŞ!",
-    "supportAndWin": "Bizi destekle ve NFT + CRAAA token kazan!",
-    "prizePool": "ÖDÜL HAVUZU:",
-    "exclusiveNFTs": "Özel NFT'ler",
-    "CRAATokens": "CRAAA tokenları (çeşitli miktarlarda)",
-    "discordRoles": "Özel Discord rolleri",
-    "bonusSurprises": "Bonuslar ve sürprizler",
-    "joinTelegram": "Telegram'a Katıl",
-    "joinDiscord": "Discord'a Katıl",
-    "twitterActions": "Twitter işlemleri:",
-    "followTwitter": "@CRAAzy___cube'ü Takip Et",
-    "viewPost": "Gönderiyi gör",
-    "like": "Beğen",
-    "retweet": "Retweet",
-    "allDone": "HEPSİNİ YAPTIM!",
-    "later": "Sonra",
-    "participateNow": "ŞİMDİ KATIL!",
-    "weeklyGiveaway": "Aktif katılımcılar arasında her hafta çekiliş!"
+    "gameGuideContent": "🎮 CrazyCube Oyun Rehberi\n\n🔹 Başlangıç\n• CRAA token alın — gas ücretleri ve oyun eylemleri için\n• Marketplace'te CrazyCube NFT satın alın\n\n🔹 Oyun Oynamaya Nasıl Başlanır\n• Ping sekmesine gidin — NFT'lerinizi göreceksiniz\n• Yeni küp için Aktifleştir'e basın — bu ilk Ping'dir, CRAA vermez ama zamanlayıcıyı başlatır\n• Aktifleştirmeden sonra ping yapabilirsiniz (Ping'e basın). Varsayılan olarak 10 günde bir, ödüller birikmeye başlar\n• Her başarılı Ping CRAA getirir — miktar şunlara bağlıdır:\n  - Küp nadirliği (Common, Rare, Mystic, vb.)\n  - Deneyim bonusunuz — 10 günde bir ping kaçırmadan büyür\n  - Ping'ler arasındaki süre (daha fazla dönem geçerse, daha fazla CRAA)\n\n🔹 Deneyim Bonusu Nedir\n• Başlangıçta tüm küpler -18.9% cezaya sahiptir\n• 10 günde bir kaçırmadan — +2.7%\n• Ulaşabileceğiniz maksimum +97.2%\n• 10 günden fazla kaçırırsanız — bonus artmaz\n• 20+ gün kaçırırsanız — bonus -18.9%'a sıfırlanır\n\n🔹 CRAA Nasıl Alınır\n• CRAA hemen cüzdana düşmez, küp içinde birikir (böylece her NFT gerçek değere sahiptir)\n• Toplamak için — küpü yakmanız gerekir (Yak) (küpünüz mezarlık bölümüne gider ve artık size ait değildir, claim bölümünde CRAA coin alırsınız)\n\n🔹 Nasıl Yakılır\n• Yak bölümüne gidin\n• Küp ve bekleme süresini seçin:\n  - 12 saat → %60 oyuncuya\n  - 24 saat → %70\n  - 48 saat → %80\n• Geri kalanı havuz ve kalıcı yakma arasında bölünür (resmi dead wallet'a gider)\n• Seçilen süreden sonra gidin ve Talep Et'e basın — CRAA cüzdanınıza gelecek\n\n🔹 Küp Nasıl Canlandırılır (Çiftleştir)\n• Çiftleştir bölümüne gidin\n• 2 canlı küp seçin (yıldızları olan ve cooldown'da olmayan)\n• CRAA ödeyin (marketplace minimum fiyatının %8'i, sürekli güncellenir)\n• Mezarlıktan rastgele bir NFT yeni olarak size geri dönecek, tüm yıldızlarla ama coin olmadan:\n  - Bonus sıfırlanır (geri -18.9%'a)\n  - Yıldızlar geri yüklenir\n  - Sıfırdan tekrar ping yapabilirsiniz\n\n🔹 Sistemde CRAA Nerede\n• Ping için CRAA aylık ödül havuzundan gelir\n• Çiftleştir için harcanan CRAA bu havuza geri döner\n• Yak'tan gelen CRAA sonsuza dek yanar\n• Yakılan her şey özel cüzdan 0x...dead'e gider ve sonsuza dek kaybolur\n\n🔹 CRAA Token Ücretleri\n• Transferlerde %3 ücret — oyun sözleşmesine gider\n• DEX satışlarında %10 ücret — oyun sözleşmesine gider\n• DEX alımlarında %0 ücret — alımda ücret yok\n• Tüm ücretler oyun ekosistemini ve ödül havuzunu destekler\n\n🔹 Örnek Strateji\nÜç küpünüz var:\n• Common (normal) — ping yapın, bonus 10 günde bir %2.7 büyür %97'ye kadar, sonra durur. Satabilir, NFT transfer edebilir, bonus korunur\n• Rare — Çiftleştir için kullanın veya CRAA biriktirin\n• Mystic — nadir, daha fazla CRAA getirir, yakmamak daha iyi\n\nSakin oynayın:\n• 10 günde bir girin ve Ping'e basın\n• Periyodik olarak zayıf küpleri yakın → token alın\n• Veya ölüleri canlandırın — daha nadir olan için şans alın\n\n💡 İpuçları\nMaksimum kar istiyorsanız — düzenli ping yapın ve nadir küpleri çok erken yakmayın.\n💥 Yakılan tokenlar geri gelmeyecek — bu kalan CRAA'nın değerini artırır.\n\n🚀 Vizyonumuz\nPlanlarımız 1-2 ay içinde oyunu ayarlamak ve NFT ve token sözleşmelerinde admin haklarından vazgeçmek. Sosyal bir deney yapmak ve hiçbir şeyi değiştirme imkanı olmayan tamamen sosyal oyun yaratmak istiyoruz — sadece pazar ve insanlar karar verir.\n\nEkibin CRAA coin şeklinde sözleşmede bonusu yoktur. Bir cüzdan oluşturabilirsiniz, örneğin Rabby cüzdanında 1 dakikada ve oyunumuzu oynayabilirsiniz.\n\nYakında oyunumuz pazar öz-düzenlemesi ile %100 merkezi olmayan olacak."
   },
   "tabs": {
     "breed": "Çiftleştir",
